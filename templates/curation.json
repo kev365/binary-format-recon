@@ -1,0 +1,111 @@
+{
+  "_comment": "Curation judgements merged into INDEX.md by tpl_index.py. Keys under 'templates' are paths relative to templates/imported/ (or templates/ for own/). Statuses: complete | partial | unreviewed | draft.",
+  "templates": {
+    "filesystem/ntfs/NTFS FILE Record.tpl": {
+      "status": "partial",
+      "notes": "Per x-ways.net: knows nothing about fixup bytes, so values spanning the sector-end fixup positions read wrong on disk."
+    },
+    "filesystem/ntfs/NTFS FILE Record (x-ways.net-contrib).tpl": {
+      "status": "partial",
+      "notes": "Same fixup caveat as the winhex-default copy; diff the two before trusting either."
+    },
+    "filesystem/ntfs/NTFS Data Runs.tpl": {
+      "status": "partial",
+      "notes": "Decodes run headers via uint_flex; does not sum runs or follow sparse/compressed flags."
+    },
+    "windows-artefacts/LNK FILE Record.tpl": {
+      "status": "partial",
+      "notes": "Per x-ways.net: structures at end of file remain partially undocumented; compare MS-SHLLINK before extending."
+    },
+    "windows-artefacts/Non-Unicode LNK FILE Record.tpl": {
+      "status": "partial",
+      "notes": "Same end-of-file caveat as the Unicode variant."
+    },
+    "windows-artefacts/ETL_Header_x64.tpl": {
+      "status": "partial",
+      "notes": "Header only; trace buffers and events not covered."
+    },
+    "windows-artefacts/EVTX Record Structure.tpl": {
+      "status": "partial",
+      "notes": "Record envelope only; BinXML payload is beyond the template language. Expansion candidate: token-level BinXML markers."
+    },
+    "file-formats/SQLite Header.tpl": {
+      "status": "partial",
+      "notes": "100-byte database header only; b-tree pages and cells not covered. Expansion candidate: page header + cell pointer array."
+    },
+    "file-formats/Dalet SND file header.txt": {
+      "status": "partial",
+      "notes": "Ships as .txt; rename to .tpl for X-Ways to list it."
+    },
+    "file-formats/Dalet VOL file header.txt": {
+      "status": "partial",
+      "notes": "Ships as .txt; rename to .tpl for X-Ways to list it."
+    },
+    "file-formats/Dalet BWF file header.txt": {
+      "status": "partial",
+      "notes": "Ships as .txt; rename to .tpl for X-Ways to list it."
+    }
+  },
+  "wanted": [
+    {
+      "structure": "Registry hive base block + hbin/cell headers (REGF)",
+      "documented": "libyal libregf documentation; Windows registry file format spec (msuhanov)",
+      "priority": "high",
+      "notes": "Core DFIR artefact with no public template found."
+    },
+    {
+      "structure": "Prefetch SCCA header (compressed + uncompressed)",
+      "documented": "libyal libscca documentation",
+      "priority": "high",
+      "notes": "Win10+ files are LZXPRESS-Huffman compressed after offset 8; template covers the decompressed layout."
+    },
+    {
+      "structure": "WMI CIM repository OBJECTS.DATA page + TOC",
+      "documented": "flare-wmi documentation; this skill's own findings",
+      "priority": "high",
+      "notes": "Fits the fixture-style paged layout tplgen emits; generate from established fields as analysis progresses."
+    },
+    {
+      "structure": "OLE2/CFB compound file header + FAT sector",
+      "documented": "MS-CFB open specification",
+      "priority": "medium",
+      "notes": "Prerequisite for jump lists, thumbs.db, MSI."
+    },
+    {
+      "structure": "Jump list DestList stream",
+      "documented": "community RE (no authoritative spec); libyal notes",
+      "priority": "medium",
+      "notes": "Layout varies by Windows version; version-scope any template."
+    },
+    {
+      "structure": "$UsnJrnl USN_RECORD_V2/V3",
+      "documented": "Microsoft SDK headers (winioctl.h); MS docs",
+      "priority": "medium",
+      "notes": "Fixed layout, self-validating with record length field."
+    },
+    {
+      "structure": "$LogFile RSTR/RCRD page headers",
+      "documented": "libyal libfsntfs documentation",
+      "priority": "medium",
+      "notes": "Fixup caveat applies, same as FILE records."
+    },
+    {
+      "structure": "ESE (EDB) database header + page header",
+      "documented": "libyal libesedb documentation",
+      "priority": "medium",
+      "notes": "Gateway to SRUM, Windows Search, WebCacheV01."
+    },
+    {
+      "structure": "Recycle Bin $I (Win10 v2 with variable-length name)",
+      "documented": "community RE; corroborate against imported $I template",
+      "priority": "low",
+      "notes": "Imported '$I File Structure.tpl' covers this; verify against Win11 samples, then mark complete."
+    },
+    {
+      "structure": "Thumbcache _NN.db entry header",
+      "documented": "libyal documentation (thumbcache format notes)",
+      "priority": "low",
+      "notes": ""
+    }
+  ]
+}

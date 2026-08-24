@@ -1,0 +1,938 @@
+{
+ "disk-images/Acronis - TIB File Header.tpl": {
+  "contributor": "Costas Katsavounidis (kacos2000)",
+  "license": "GPL-3.0",
+  "original_path": "Acronis - TIB File Header.tpl",
+  "retrieved": "2026-08-24",
+  "source": "kacos2000",
+  "url": "https://github.com/kacos2000/WinHex_Templates"
+ },
+ "disk-images/VHD Header.tpl": {
+  "contributor": "Costas Katsavounidis (kacos2000)",
+  "license": "GPL-3.0",
+  "original_path": "VHD Header.tpl",
+  "retrieved": "2026-08-24",
+  "source": "kacos2000",
+  "url": "https://github.com/kacos2000/WinHex_Templates"
+ },
+ "disk-images/VHDX Header.tpl": {
+  "contributor": "Costas Katsavounidis (kacos2000)",
+  "license": "GPL-3.0",
+  "original_path": "VHDX Header.tpl",
+  "retrieved": "2026-08-24",
+  "source": "kacos2000",
+  "url": "https://github.com/kacos2000/WinHex_Templates"
+ },
+ "disk-images/VMDK Header.tpl": {
+  "contributor": "Costas Katsavounidis (kacos2000)",
+  "license": "GPL-3.0",
+  "original_path": "VMDK Header.tpl",
+  "retrieved": "2026-08-24",
+  "source": "kacos2000",
+  "url": "https://github.com/kacos2000/WinHex_Templates"
+ },
+ "disk-partition/GPT.tpl": {
+  "contributor": "Costas Katsavounidis (kacos2000)",
+  "license": "GPL-3.0",
+  "original_path": "GPT.tpl",
+  "retrieved": "2026-08-24",
+  "source": "kacos2000",
+  "url": "https://github.com/kacos2000/WinHex_Templates"
+ },
+ "disk-partition/GUID Partition Table.tpl": {
+  "contributor": "X-Ways Software Technology AG",
+  "license": "shipped with WinHex/X-Ways, no explicit license",
+  "original_path": "WinHex_default/GUID Partition Table.tpl",
+  "retrieved": "2026-08-24",
+  "source": "winhex-default",
+  "url": "https://github.com/kacos2000/WinHex_Templates"
+ },
+ "disk-partition/MBR-GPT.tpl": {
+  "contributor": "Costas Katsavounidis (kacos2000)",
+  "license": "GPL-3.0",
+  "original_path": "MBR-GPT.tpl",
+  "retrieved": "2026-08-24",
+  "source": "kacos2000",
+  "url": "https://github.com/kacos2000/WinHex_Templates"
+ },
+ "disk-partition/MBR.tpl": {
+  "contributor": "Costas Katsavounidis (kacos2000)",
+  "license": "GPL-3.0",
+  "original_path": "MBR.tpl",
+  "retrieved": "2026-08-24",
+  "source": "kacos2000",
+  "url": "https://github.com/kacos2000/WinHex_Templates"
+ },
+ "disk-partition/Master Boot Record.tpl": {
+  "contributor": "X-Ways Software Technology AG",
+  "license": "shipped with WinHex/X-Ways, no explicit license",
+  "original_path": "WinHex_default/Master Boot Record.tpl",
+  "retrieved": "2026-08-24",
+  "source": "winhex-default",
+  "url": "https://github.com/kacos2000/WinHex_Templates"
+ },
+ "file-formats/AFP_Structured_Fields.tpl": {
+  "contributor": "Bob Carlyle",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/AFP_Structured_Fields.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "file-formats/BMP.tpl": {
+  "contributor": "Khomenko Volodymyr",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/BMP.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "file-formats/DOS_exe.tpl": {
+  "contributor": "Chris S",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/DOS_exe.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "file-formats/Dalet BWF file header.txt": {
+  "contributor": "Steven Scholte",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "Dalet BWF file header.txt",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "file-formats/Dalet SND file header.txt": {
+  "contributor": "Steven Scholte",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "Dalet SND file header.txt",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "file-formats/Dalet VOL file header.txt": {
+  "contributor": "Steven Scholte",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "Dalet VOL file header.txt",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "file-formats/OLYMPUS_WMA_v03.tpl": {
+  "contributor": "Catalin Grigoras",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/OLYMPUS_WMA_v03.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "file-formats/PCAP.tpl": {
+  "contributor": "Frank Weiss",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/PCAP.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "file-formats/POS_File_Format_1.1.tpl": {
+  "contributor": "Stefan Fleischmann",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/POS_File_Format_1.1.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "file-formats/POS_File_Format_2.0.tpl": {
+  "contributor": "Stefan Fleischmann",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/POS_File_Format_2.0.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "file-formats/Palm PDB 6 records.tpl": {
+  "contributor": "Ulf Zibis",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/Palm PDB 6 records.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "file-formats/Palm PDB.tpl": {
+  "contributor": "Ulf Zibis",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/Palm PDB.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "file-formats/SFF_File_Format.tpl": {
+  "contributor": "Ulf Zibis",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/SFF_File_Format.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "file-formats/SQLite Header.tpl": {
+  "contributor": "Terrance Maguire",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/SQLite Header.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "file-formats/TIFF File Format.tpl": {
+  "contributor": "Ulf Zibis",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/TIFF File Format.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "file-formats/TIFF File IFD.tpl": {
+  "contributor": "Ulf Zibis",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/TIFF File IFD.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "file-formats/WAVPCM.tpl": {
+  "contributor": "Khomenko Volodymyr",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/WAVPCM.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "file-formats/ZIP.tpl": {
+  "contributor": "Alex Sidorov",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/ZIP.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "file-formats/ZIP_Central_Directory_Structure.tpl": {
+  "contributor": "Trenton D. Adams",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/ZIP_Central_Directory_Structure.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "file-formats/ZIP_Data_Descriptor_Structure.tpl": {
+  "contributor": "Trenton D. Adams",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/ZIP_Data_Descriptor_Structure.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "file-formats/ZIP_End_of_Central_Dir_Structure.tpl": {
+  "contributor": "Trenton D. Adams",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/ZIP_End_of_Central_Dir_Structure.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "file-formats/ZIP_Local_File_Header_Structure.tpl": {
+  "contributor": "Trenton D. Adams",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/ZIP_Local_File_Header_Structure.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "file-formats/dbf field.tpl": {
+  "contributor": "Paul Mullen",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/dbf field.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "file-formats/dbf header.tpl": {
+  "contributor": "Paul Mullen",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/dbf header.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "file-formats/dbf sample records.tpl": {
+  "contributor": "Paul Mullen",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/dbf sample records.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/ext/Ext Directory Entry.tpl": {
+  "contributor": "X-Ways Software Technology AG",
+  "license": "shipped with WinHex/X-Ways, no explicit license",
+  "original_path": "WinHex_default/Ext Directory Entry.tpl",
+  "retrieved": "2026-08-24",
+  "source": "winhex-default",
+  "url": "https://github.com/kacos2000/WinHex_Templates"
+ },
+ "filesystem/ext/Ext Group Descriptor.tpl": {
+  "contributor": "X-Ways Software Technology AG",
+  "license": "shipped with WinHex/X-Ways, no explicit license",
+  "original_path": "WinHex_default/Ext Group Descriptor.tpl",
+  "retrieved": "2026-08-24",
+  "source": "winhex-default",
+  "url": "https://github.com/kacos2000/WinHex_Templates"
+ },
+ "filesystem/ext/Ext Inode.tpl": {
+  "contributor": "X-Ways Software Technology AG",
+  "license": "shipped with WinHex/X-Ways, no explicit license",
+  "original_path": "WinHex_default/Ext Inode.tpl",
+  "retrieved": "2026-08-24",
+  "source": "winhex-default",
+  "url": "https://github.com/kacos2000/WinHex_Templates"
+ },
+ "filesystem/ext/Ext Superblock.tpl": {
+  "contributor": "X-Ways Software Technology AG",
+  "license": "shipped with WinHex/X-Ways, no explicit license",
+  "original_path": "WinHex_default/Ext Superblock.tpl",
+  "retrieved": "2026-08-24",
+  "source": "winhex-default",
+  "url": "https://github.com/kacos2000/WinHex_Templates"
+ },
+ "filesystem/fat-exfat/Boot Sector FAT.tpl": {
+  "contributor": "X-Ways Software Technology AG",
+  "license": "shipped with WinHex/X-Ways, no explicit license",
+  "original_path": "WinHex_default/Boot Sector FAT.tpl",
+  "retrieved": "2026-08-24",
+  "source": "winhex-default",
+  "url": "https://github.com/kacos2000/WinHex_Templates"
+ },
+ "filesystem/fat-exfat/Boot Sector FAT32.tpl": {
+  "contributor": "X-Ways Software Technology AG",
+  "license": "shipped with WinHex/X-Ways, no explicit license",
+  "original_path": "WinHex_default/Boot Sector FAT32.tpl",
+  "retrieved": "2026-08-24",
+  "source": "winhex-default",
+  "url": "https://github.com/kacos2000/WinHex_Templates"
+ },
+ "filesystem/fat-exfat/ExFAT Directory Entries.tpl": {
+  "contributor": "Costas Katsavounidis (kacos2000)",
+  "license": "GPL-3.0",
+  "original_path": "ExFAT Directory Entries.tpl",
+  "retrieved": "2026-08-24",
+  "source": "kacos2000",
+  "url": "https://github.com/kacos2000/WinHex_Templates"
+ },
+ "filesystem/fat-exfat/ExFAT_VBR.tpl": {
+  "contributor": "Costas Katsavounidis (kacos2000)",
+  "license": "GPL-3.0",
+  "original_path": "ExFAT_VBR.tpl",
+  "retrieved": "2026-08-24",
+  "source": "kacos2000",
+  "url": "https://github.com/kacos2000/WinHex_Templates"
+ },
+ "filesystem/fat-exfat/FAT Directory Entry.tpl": {
+  "contributor": "X-Ways Software Technology AG",
+  "license": "shipped with WinHex/X-Ways, no explicit license",
+  "original_path": "WinHex_default/FAT Directory Entry.tpl",
+  "retrieved": "2026-08-24",
+  "source": "winhex-default",
+  "url": "https://github.com/kacos2000/WinHex_Templates"
+ },
+ "filesystem/fat-exfat/FAT LFN Entry.tpl": {
+  "contributor": "X-Ways Software Technology AG",
+  "license": "shipped with WinHex/X-Ways, no explicit license",
+  "original_path": "WinHex_default/FAT LFN Entry.tpl",
+  "retrieved": "2026-08-24",
+  "source": "winhex-default",
+  "url": "https://github.com/kacos2000/WinHex_Templates"
+ },
+ "filesystem/fat-exfat/FAT16_Entry.tpl": {
+  "contributor": "Paul Mullen",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/FAT16_Entry.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/fat-exfat/FAT32_Entry.tpl": {
+  "contributor": "Stefan Fleischmann",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/FAT32_Entry.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/fat-exfat/FAT_VBR.tpl": {
+  "contributor": "Costas Katsavounidis (kacos2000)",
+  "license": "GPL-3.0",
+  "original_path": "FAT_VBR.tpl",
+  "retrieved": "2026-08-24",
+  "source": "kacos2000",
+  "url": "https://github.com/kacos2000/WinHex_Templates"
+ },
+ "filesystem/fat-exfat/FSINFO_Sector.tpl": {
+  "contributor": "Stefan Fleischmann",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/FSINFO_Sector.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/fat-exfat/exFAT Boot Sector 2.tpl": {
+  "contributor": "Christopher Taylor / Robert Shullich",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/exFAT Boot Sector 2.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/fat-exfat/exFAT Boot Sector.tpl": {
+  "contributor": "Christopher Taylor / Robert Shullich",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/exFAT Boot Sector.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/fat-exfat/exFAT Regular File.tpl": {
+  "contributor": "Scott Pancoast",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/exFAT Regular File.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/fat-exfat/exFAT type code 81.tpl": {
+  "contributor": "Scott Pancoast",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/exFAT type code 81.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/fat-exfat/exFAT type code 82.tpl": {
+  "contributor": "Scott Pancoast",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/exFAT type code 82.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/fat-exfat/exFAT type code 83.tpl": {
+  "contributor": "Scott Pancoast",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/exFAT type code 83.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/fat-exfat/exFAT type code 85.tpl": {
+  "contributor": "Scott Pancoast",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/exFAT type code 85.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/fat-exfat/exFAT type code A0.tpl": {
+  "contributor": "Scott Pancoast",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/exFAT type code A0.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/fat-exfat/exFAT type code C0.tpl": {
+  "contributor": "Scott Pancoast",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/exFAT type code C0.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/fat-exfat/exFAT type code C1.tpl": {
+  "contributor": "Scott Pancoast",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/exFAT type code C1.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/hfsplus/HFS+ Volume Header.tpl": {
+  "contributor": "X-Ways Software Technology AG",
+  "license": "shipped with WinHex/X-Ways, no explicit license",
+  "original_path": "WinHex_default/HFS+ Volume Header.tpl",
+  "retrieved": "2026-08-24",
+  "source": "winhex-default",
+  "url": "https://github.com/kacos2000/WinHex_Templates"
+ },
+ "filesystem/hfsplus/HFSPlus_B-Tree_Header.tpl": {
+  "contributor": "Jens Kirschner / Stefan Fleischmann",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/HFSPlus_B-Tree_Header.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/hfsplus/HFSPlus_Catalog_Key.tpl": {
+  "contributor": "Jens Kirschner / Stefan Fleischmann",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/HFSPlus_Catalog_Key.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/hfsplus/HFSPlus_Index_Node.tpl": {
+  "contributor": "Jens Kirschner / Stefan Fleischmann",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/HFSPlus_Index_Node.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/hfsplus/HFSPlus_Volume_Header.tpl": {
+  "contributor": "Jens Kirschner / Stefan Fleischmann",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/HFSPlus_Volume_Header.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/ntfs/Boot Sector NTFS.tpl": {
+  "contributor": "X-Ways Software Technology AG",
+  "license": "shipped with WinHex/X-Ways, no explicit license",
+  "original_path": "WinHex_default/Boot Sector NTFS.tpl",
+  "retrieved": "2026-08-24",
+  "source": "winhex-default",
+  "url": "https://github.com/kacos2000/WinHex_Templates"
+ },
+ "filesystem/ntfs/NTFS - $AttrDef Structure.tpl": {
+  "contributor": "Costas Katsavounidis (kacos2000)",
+  "license": "GPL-3.0",
+  "original_path": "NTFS - $AttrDef Structure.tpl",
+  "retrieved": "2026-08-24",
+  "source": "kacos2000",
+  "url": "https://github.com/kacos2000/WinHex_Templates"
+ },
+ "filesystem/ntfs/NTFS - $EFS Stream.tpl": {
+  "contributor": "Costas Katsavounidis (kacos2000)",
+  "license": "GPL-3.0",
+  "original_path": "NTFS - $EFS Stream.tpl",
+  "retrieved": "2026-08-24",
+  "source": "kacos2000",
+  "url": "https://github.com/kacos2000/WinHex_Templates"
+ },
+ "filesystem/ntfs/NTFS - $R INDX Structure.tpl": {
+  "contributor": "Costas Katsavounidis (kacos2000)",
+  "license": "GPL-3.0",
+  "original_path": "NTFS - $R INDX Structure.tpl",
+  "retrieved": "2026-08-24",
+  "source": "kacos2000",
+  "url": "https://github.com/kacos2000/WinHex_Templates"
+ },
+ "filesystem/ntfs/NTFS - MFT Attribute List.tpl": {
+  "contributor": "Costas Katsavounidis (kacos2000)",
+  "license": "GPL-3.0",
+  "original_path": "NTFS - MFT Attribute List.tpl",
+  "retrieved": "2026-08-24",
+  "source": "kacos2000",
+  "url": "https://github.com/kacos2000/WinHex_Templates"
+ },
+ "filesystem/ntfs/NTFS - MFT FILE Record.tpl": {
+  "contributor": "Costas Katsavounidis (kacos2000)",
+  "license": "GPL-3.0",
+  "original_path": "NTFS - MFT FILE Record.tpl",
+  "retrieved": "2026-08-24",
+  "source": "kacos2000",
+  "url": "https://github.com/kacos2000/WinHex_Templates"
+ },
+ "filesystem/ntfs/NTFS Data Runs.tpl": {
+  "contributor": "Jens Kirschner",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/NTFS Data Runs.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/ntfs/NTFS FILE Record (x-ways.net-contrib).tpl": {
+  "contributor": "Jens Kirschner",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/NTFS FILE Record.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/ntfs/NTFS FILE Record.tpl": {
+  "contributor": "X-Ways Software Technology AG",
+  "license": "shipped with WinHex/X-Ways, no explicit license",
+  "original_path": "WinHex_default/NTFS FILE Record.tpl",
+  "retrieved": "2026-08-24",
+  "source": "winhex-default",
+  "url": "https://github.com/kacos2000/WinHex_Templates"
+ },
+ "filesystem/ntfs/NTFS MFT FILE Record.tpl": {
+  "contributor": "Costas Katsavounidis (kacos2000)",
+  "license": "GPL-3.0",
+  "original_path": "NTFS MFT FILE Record.tpl",
+  "retrieved": "2026-08-24",
+  "source": "kacos2000",
+  "url": "https://github.com/kacos2000/WinHex_Templates"
+ },
+ "filesystem/ntfs/NTFS_VBR.tpl": {
+  "contributor": "Costas Katsavounidis (kacos2000)",
+  "license": "GPL-3.0",
+  "original_path": "NTFS_VBR.tpl",
+  "retrieved": "2026-08-24",
+  "source": "kacos2000",
+  "url": "https://github.com/kacos2000/WinHex_Templates"
+ },
+ "filesystem/other/CDFS Directory Entry Ascii.tpl": {
+  "contributor": "Chris Taylor",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/CDFS Directory Entry Ascii.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/other/CDFS Directory Entry Unicode.tpl": {
+  "contributor": "Chris Taylor",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/CDFS Directory Entry Unicode.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/other/CDFS Path Tables Ascii.tpl": {
+  "contributor": "Chris Taylor",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/CDFS Path Tables Ascii.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/other/CDFS Path Tables Unicode.tpl": {
+  "contributor": "Chris Taylor",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/CDFS Path Tables Unicode.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/other/CDFS Volume Descriptor.tpl": {
+  "contributor": "Chris Taylor",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/CDFS Volume Descriptor.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/other/JFS Superblock.tpl": {
+  "contributor": "Jens Kirschner",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/JFS Superblock.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/refs/REFS - $AttrDef Structure.tpl": {
+  "contributor": "Costas Katsavounidis (kacos2000)",
+  "license": "GPL-3.0",
+  "original_path": "REFS - $AttrDef Structure.tpl",
+  "retrieved": "2026-08-24",
+  "source": "kacos2000",
+  "url": "https://github.com/kacos2000/WinHex_Templates"
+ },
+ "filesystem/refs/ReFS CheckPoint.tpl": {
+  "contributor": "Costas Katsavounidis (kacos2000)",
+  "license": "GPL-3.0",
+  "original_path": "ReFS CheckPoint.tpl",
+  "retrieved": "2026-08-24",
+  "source": "kacos2000",
+  "url": "https://github.com/kacos2000/WinHex_Templates"
+ },
+ "filesystem/refs/ReFS SuperBlock.tpl": {
+  "contributor": "Costas Katsavounidis (kacos2000)",
+  "license": "GPL-3.0",
+  "original_path": "ReFS SuperBlock.tpl",
+  "retrieved": "2026-08-24",
+  "source": "kacos2000",
+  "url": "https://github.com/kacos2000/WinHex_Templates"
+ },
+ "filesystem/refs/ReFS_FSRS.tpl": {
+  "contributor": "Costas Katsavounidis (kacos2000)",
+  "license": "GPL-3.0",
+  "original_path": "ReFS_FSRS.tpl",
+  "retrieved": "2026-08-24",
+  "source": "kacos2000",
+  "url": "https://github.com/kacos2000/WinHex_Templates"
+ },
+ "filesystem/reiser/Reiser Superblock.tpl": {
+  "contributor": "Jens Kirschner",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/Reiser Superblock.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/reiser/Reiser4 Directory Entries.tpl": {
+  "contributor": "Jens Kirschner",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/Reiser4 Directory Entries.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/reiser/Reiser4 Item Header Large.tpl": {
+  "contributor": "Jens Kirschner",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/Reiser4 Item Header Large.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/reiser/Reiser4 Item Header Small.tpl": {
+  "contributor": "Jens Kirschner",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/Reiser4 Item Header Small.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/reiser/Reiser4 Node Header.tpl": {
+  "contributor": "Jens Kirschner",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/Reiser4 Node Header.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/reiser/Reiser4 Stat Data.tpl": {
+  "contributor": "Jens Kirschner",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/Reiser4 Stat Data.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/reiser/Reiser4 Superblock.tpl": {
+  "contributor": "Jens Kirschner",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/Reiser4 Superblock.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/ufs/UFS directory entry BE.tpl": {
+  "contributor": "Michele Larese",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/UFS directory entry BE.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/ufs/UFS directory entry LE.tpl": {
+  "contributor": "Michele Larese",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/UFS directory entry LE.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/ufs/UFS1 Cylinder Group Descriptor BE.tpl": {
+  "contributor": "Michele Larese",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/UFS1 Cylinder Group Descriptor BE.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/ufs/UFS1 Cylinder Group Descriptor LE.tpl": {
+  "contributor": "Michele Larese",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/UFS1 Cylinder Group Descriptor LE.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/ufs/UFS1 Inode BE.tpl": {
+  "contributor": "Michele Larese",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/UFS1 Inode BE.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/ufs/UFS1 Inode LE.tpl": {
+  "contributor": "Michele Larese",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/UFS1 Inode LE.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/ufs/UFS1 Superblock BE.tpl": {
+  "contributor": "Michele Larese",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/UFS1 Superblock BE.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/ufs/UFS1 Superblock LE.tpl": {
+  "contributor": "Michele Larese",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/UFS1 Superblock LE.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/ufs/UFS2 Cylinder Group Descriptor BE.tpl": {
+  "contributor": "Michele Larese",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/UFS2 Cylinder Group Descriptor BE.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/ufs/UFS2 Cylinder Group Descriptor LE.tpl": {
+  "contributor": "Michele Larese",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/UFS2 Cylinder Group Descriptor LE.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/ufs/UFS2 Inode BE.tpl": {
+  "contributor": "Michele Larese",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/UFS2 Inode BE.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/ufs/UFS2 Inode LE.tpl": {
+  "contributor": "Michele Larese",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/UFS2 Inode LE.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/ufs/UFS2 Superblock BE.tpl": {
+  "contributor": "Michele Larese",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/UFS2 Superblock BE.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "filesystem/ufs/UFS2 Superblock LE.tpl": {
+  "contributor": "Michele Larese",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/UFS2 Superblock LE.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "windows-artefacts/$I File Structure.tpl": {
+  "contributor": "Costas Katsavounidis (kacos2000)",
+  "license": "GPL-3.0",
+  "original_path": "$I File Structure.tpl",
+  "retrieved": "2026-08-24",
+  "source": "kacos2000",
+  "url": "https://github.com/kacos2000/WinHex_Templates"
+ },
+ "windows-artefacts/ETL_Header_x64.tpl": {
+  "contributor": "Costas Katsavounidis (kacos2000)",
+  "license": "GPL-3.0",
+  "original_path": "ETL_Header_x64.tpl",
+  "retrieved": "2026-08-24",
+  "source": "kacos2000",
+  "url": "https://github.com/kacos2000/WinHex_Templates"
+ },
+ "windows-artefacts/EVTX Chunk Header.tpl": {
+  "contributor": "Costas Katsavounidis (kacos2000)",
+  "license": "GPL-3.0",
+  "original_path": "EVTX Chunk Header.tpl",
+  "retrieved": "2026-08-24",
+  "source": "kacos2000",
+  "url": "https://github.com/kacos2000/WinHex_Templates"
+ },
+ "windows-artefacts/EVTX File Header.tpl": {
+  "contributor": "Costas Katsavounidis (kacos2000)",
+  "license": "GPL-3.0",
+  "original_path": "EVTX File Header.tpl",
+  "retrieved": "2026-08-24",
+  "source": "kacos2000",
+  "url": "https://github.com/kacos2000/WinHex_Templates"
+ },
+ "windows-artefacts/EVTX Record Structure.tpl": {
+  "contributor": "Costas Katsavounidis (kacos2000)",
+  "license": "GPL-3.0",
+  "original_path": "EVTX Record Structure.tpl",
+  "retrieved": "2026-08-24",
+  "source": "kacos2000",
+  "url": "https://github.com/kacos2000/WinHex_Templates"
+ },
+ "windows-artefacts/EVT_Cursor.tpl": {
+  "contributor": "Andreas Schuster",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/EVT_Cursor.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "windows-artefacts/EVT_Event.tpl": {
+  "contributor": "Andreas Schuster",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/EVT_Event.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "windows-artefacts/EVT_Header.tpl": {
+  "contributor": "Andreas Schuster",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/EVT_Header.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "windows-artefacts/INFO2 Structure.tpl": {
+  "contributor": "Costas Katsavounidis (kacos2000)",
+  "license": "GPL-3.0",
+  "original_path": "INFO2 Structure.tpl",
+  "retrieved": "2026-08-24",
+  "source": "kacos2000",
+  "url": "https://github.com/kacos2000/WinHex_Templates"
+ },
+ "windows-artefacts/LNK FILE Record.tpl": {
+  "contributor": "Steve Guty",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/LNK FILE Record.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "windows-artefacts/Non-Unicode LNK FILE Record.tpl": {
+  "contributor": "Steve Guty",
+  "license": "contributed to x-ways.net, no explicit license; contributor credited",
+  "original_path": "WinHex_additional/Non-Unicode LNK FILE Record.tpl",
+  "retrieved": "2026-08-24",
+  "source": "x-ways.net-contrib",
+  "url": "https://www.x-ways.net/winhex/templates/"
+ },
+ "windows-artefacts/SHD spool shadow file.tpl": {
+  "contributor": "Costas Katsavounidis (kacos2000)",
+  "license": "GPL-3.0",
+  "original_path": "SHD spool shadow file.tpl",
+  "retrieved": "2026-08-24",
+  "source": "kacos2000",
+  "url": "https://github.com/kacos2000/WinHex_Templates"
+ }
+}

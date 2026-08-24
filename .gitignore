@@ -1,0 +1,14 @@
+# The imported X-Ways templates are third-party material with mixed or
+# unstated licensing and are not redistributed with this project. What ships
+# is the master index (templates/INDEX.md), the curation judgements, and the
+# pointer record below. Rebuild the local working copy with:
+#   python templates/fetch_templates.py
+templates/imported/*
+!templates/imported/PROVENANCE.json
+
+__pycache__/
+*.pyc
+
+# Local-only: session memory and project instructions for Claude
+.remember/
+CLAUDE.md
