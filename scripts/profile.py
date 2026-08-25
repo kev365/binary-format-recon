@@ -103,6 +103,29 @@ def scan_magics(data, limit=64):
     return hits
 
 
+def signature_strides(by_label, min_hits=3):
+    """Strides corroborated by a known container signature repeating on a
+    fixed step, as {stride: {label, count, start}}.
+
+    This is the strongest stride evidence the tool has. A recognised magic
+    recurring at an exact interval *is* a record boundary; a stride inferred
+    from token-gap votes is only the modal spacing of repeated bytes, which
+    in a record-oriented format is usually the size of some common *inner*
+    record, not the container. When the two disagree, the signature wins.
+    """
+    out = {}
+    for label, offs in by_label.items():
+        if len(offs) < min_hits:
+            continue
+        step = collections.Counter(b - a for a, b in zip(offs, offs[1:]))
+        mg, mc = step.most_common(1)[0]
+        if mg >= 8 and mc >= len(offs) // 2:
+            prev = out.get(mg)
+            if prev is None or mc > prev["count"]:
+                out[mg] = {"label": label, "count": mc + 1, "start": offs[0]}
+    return out
+
+
 def gap_strides(data, token=4, sample=1 << 20, max_keys=400000):
     """Modal distance between repeated tokens -> candidate record stride.
 
@@ -128,7 +151,8 @@ def gap_strides(data, token=4, sample=1 << 20, max_keys=400000):
     return gaps
 
 
-def stride_stats(data, stride, modal, probe=128, max_blocks=512):
+def stride_stats(data, stride, modal, probe=128, max_blocks=512,
+                 start=0):
     """Score a candidate stride by anchor columns and non-trivial agreement.
 
     An *anchor column* is an intra-block position holding the same non-modal
@@ -137,15 +161,26 @@ def stride_stats(data, stride, modal, probe=128, max_blocks=512):
     stride makes zero-filled regions line up, but only the true stride makes
     the non-zero header bytes line up.
     """
-    nb = len(data) // stride
+    nb = (len(data) - start) // stride
     if nb < 4:
         return None
     nb = min(nb, max_blocks)
     probe = min(probe, stride)
+    # A record array does not always begin at offset 0 -- EVTX chunks follow a
+    # 4096-byte file header, for instance -- so score at the array's own phase.
+    bases = [start + k * stride for k in range(nb)]
+    # Blocks that are entirely modal across the probe window are unwritten
+    # slack, not records. They are not evidence against a stride, and letting
+    # them vote destroys every anchor column in any file allocated larger than
+    # it is filled (a log with spare chunks, a preallocated database).
+    live = [b for b in bases
+            if any(data[b + j] != modal for j in range(probe))]
+    if len(live) >= 4:
+        bases = live
     anchors = informative = 0
     agree = denom = 0
     for j in range(probe):
-        col = [data[k * stride + j] for k in range(nb)]
+        col = [data[b + j] for b in bases]
         uniq = set(col)
         all_modal = (len(uniq) == 1 and col[0] == modal)
         if not all_modal:
@@ -159,6 +194,8 @@ def stride_stats(data, stride, modal, probe=128, max_blocks=512):
                     agree += 1
     return {"anchor_cols": anchors,
             "anchor_score": anchors / probe,
+            "start": start,
+            "blocks_scored": len(bases),
             "informative_cols": informative,
             "nonmodal_agreement": (agree / denom) if denom else 0.0,
             "compared": denom}
@@ -246,14 +283,14 @@ def main():
     for off, label, sig in hits:
         by_label.setdefault(label, []).append(off)
     print(f"\nsignature scan  {len(hits)} hit(s), {len(by_label)} distinct signature(s)")
+    sig_strides = signature_strides(by_label)
+    label_step = {v["label"]: k for k, v in sig_strides.items()}
     for label, offs in by_label.items():
         head = ", ".join(f"0x{o:x}" for o in offs[:4])
         extra = ""
-        if len(offs) > 2:
-            step = collections.Counter(b - a for a, b in zip(offs, offs[1:]))
-            mg, mc = step.most_common(1)[0]
-            if mc >= len(offs) // 2:
-                extra = f"  [repeats every {mg} bytes -- strong stride evidence]"
+        if label in label_step:
+            extra = (f"  [repeats every {label_step[label]} bytes -- "
+                     f"strong stride evidence]")
         print(f"  {label}")
         print(f"    {len(offs)}x at {head}{'...' if len(offs) > 4 else ''}{extra}")
     if not hits:
@@ -263,6 +300,7 @@ def main():
     gaps = gap_strides(data)
     cands = {s for s, _ in gaps.most_common(24)}
     cands |= set(COMMON_STRIDES)
+    cands |= set(sig_strides)
     for s, _ in gaps.most_common(8):
         for d in (2, 3, 4, 8, 16):
             if s % d == 0 and s // d >= 16:
@@ -271,11 +309,14 @@ def main():
     for s in sorted(cands):
         if s < 8 or s > n // 4:
             continue
-        st = stride_stats(data, s, modal, args.probe)
+        phase = sig_strides[s]["start"] % s if s in sig_strides else 0
+        st = stride_stats(data, s, modal, args.probe, start=phase)
         if st is None:
             continue
         pad = tail_padding_score(data, s)
         st.update({"stride": s, "gap_votes": gaps.get(s, 0),
+                   "signature": (sig_strides[s]["label"]
+                                 if s in sig_strides else None),
                    "tail_zero_frac": round(pad, 4) if pad is not None else None,
                    "blocks": n // s, "exact_multiple": n % s == 0})
         scored.append(st)
@@ -284,16 +325,45 @@ def main():
 
     print(f"\nstride candidates  (modal byte 0x{modal:02x} excluded from scoring)")
     print(f"  {'stride':>8} {'anchors':>8} {'agree':>7} {'gapvotes':>9} "
-          f"{'tailzero':>9} {'blocks':>8}  exact")
+          f"{'tailzero':>9} {'blocks':>8}  exact  signature")
     for r in scored[:args.top]:
         tz = "-" if r["tail_zero_frac"] is None else f"{r['tail_zero_frac']:.3f}"
         print(f"  {r['stride']:>8} {r['anchor_cols']:>8} "
               f"{r['nonmodal_agreement']:>7.3f} {r['gap_votes']:>9} {tz:>9} "
-              f"{r['blocks']:>8}  {'yes' if r['exact_multiple'] else 'no'}")
+              f"{r['blocks']:>8}  {'yes' if r['exact_multiple'] else 'no':<5}"
+              f"  {r['signature'] or '-'}")
 
     smap = {r["stride"]: r for r in scored}
     best = scored[0] if scored else None
-    if best and best["anchor_cols"] >= 2:
+    sig_cands = [r for r in scored if r["signature"]]
+    sig_pick = (max(sig_cands, key=lambda r: sig_strides[r["stride"]]["count"])
+                if sig_cands else None)
+    if sig_pick:
+        s_ = sig_pick["stride"]
+        phase = sig_pick["start"]
+        print("")
+        print(f"  => stride {s_}: {sig_strides[s_]['count']}x "
+              f"{sig_pick['signature']} signature on an exact {s_}-byte step"
+              + (f", record array starts at 0x{phase:x}" if phase else "")
+              + f" ({sig_pick['anchor_cols']} anchor column(s) across "
+              f"{sig_pick['blocks_scored']} written block(s))")
+        if best is not sig_pick:
+            b_ = best["stride"]
+            if b_ % s_ == 0:
+                why = (f"{b_} is {b_ // s_}x the signature step, and every "
+                       f"multiple of a true stride lines up just as well")
+            elif b_ < s_:
+                why = (f"{b_} is unbacked by any signature and smaller -- "
+                       f"typically the modal size of a record *inside* the "
+                       f"container, not the container")
+            else:
+                why = f"{b_} is unbacked by any signature"
+            print(f"     note: scoring ranked {b_} higher, but {why}. Worth "
+                  f"checking once the {s_} layout is mapped, not before.")
+        off = f" --offset {phase}" if phase else ""
+        print(f"     fieldmap.py {args.file} --stride {s_}{off} --dump 2")
+        print(f"     tsscan.py  {args.file} --stride {s_}")
+    elif best and best["anchor_cols"] >= 2:
         # Every multiple of a true stride also scores well, and short block
         # counts inflate anchors by chance -- so walk down to the smallest
         # divisor that still holds up. That divisor is the record size.

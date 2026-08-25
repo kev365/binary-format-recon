@@ -44,7 +44,18 @@ Read three things:
   same non-modal byte in every block. In a sparse file any stride makes zero
   regions line up; only the true one aligns the header bytes. Multiples of a
   true stride score equally, so the tool reduces to the smallest divisor that
-  holds.
+  holds. Two corrections the scoring applies, because without them real
+  artefacts score wrong: the record array is phased to where the signature
+  actually starts (EVTX chunks begin after a 4096-byte file header, so
+  scoring from offset 0 finds no anchors at all), and blocks that are
+  entirely modal are dropped as unwritten slack rather than counted as
+  evidence against the stride — a log allocated larger than it is filled
+  would otherwise destroy every anchor column.
+- **When the two disagree, the signature wins.** A gap-vote winner unbacked
+  by a signature is usually the modal size of a record *inside* the
+  container, not the container: on a real EVTX log the token-gap scorer
+  prefers 328 (a common event record size) over the true 65536. The tool
+  reports the disagreement rather than silently picking one.
 
 If no stride emerges, the format uses variable-length records. Jump to Phase 3
 and find the length prefix instead.

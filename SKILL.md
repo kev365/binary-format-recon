@@ -149,8 +149,12 @@ python scripts/binviz.py sample.bin --stride 8192 -o viz/
 
 Entropy above ~7.5 means compressed or encrypted — stop looking for structs.
 Stride is scored by *anchor columns*, since in a sparse file any stride aligns
-the zero regions and only the true one aligns the header bytes. No stride
-means variable-length records; go to Phase 3 and find the length prefix.
+the zero regions and only the true one aligns the header bytes — but a known
+signature repeating on an exact step outranks that, and outranks token-gap
+votes, which tend to surface the size of a record *inside* the container. The
+array is scored at the phase the signature starts on, so a leading file header
+does not hide it. No stride means variable-length records; go to Phase 3 and
+find the length prefix.
 `crypto_scan.py` handles regions that stay opaque.
 
 **3. Anchors.** Timestamps and strings validate themselves, so they are the
