@@ -60,6 +60,10 @@
     "own/EVTX Chunk Header.tpl": {
       "status": "draft",
       "notes": "As above. Both CRC-32 claims verified empirically. The two 128..512 arrays are marked inferred - taken from libyal, not independently tested. Unknown +0x78 is 1 in every chunk sampled."
+    },
+    "windows-artefacts/$I File Structure.tpl": {
+      "status": "partial",
+      "notes": "Format version 2 branch ESTABLISHED (2026-08-24): every field proven by controlled deletion of a known file plus a 67-sample Win11 26200 corpus. version@0=2 (67/67), size@8 exact, FILETIME@16 is UTC, chars@24 counts UTF-16 characters INCLUDING the terminator, and total = 28 + 2*chars (67/67). The template's 'string16 <chars>' consumes exactly the right byte count. Version 1 branch UNTESTED - no Vista/7 sample available here, and 'string16 256' is suspect: the commonly cited v1 layout is a fixed 260-character (520-byte) name giving a 544-byte file, which 256 would under-read by 8 bytes, while libyal/dtformats documents the field as variable-length instead. Sources disagree; unresolved without a v1 sample. Two lint warnings are the tolerated unclosed else-if chain, not defects."
     }
   },
   "wanted": [
@@ -115,7 +119,7 @@
       "structure": "Recycle Bin $I (Win10 v2 with variable-length name)",
       "documented": "community RE; corroborate against imported $I template",
       "priority": "low",
-      "notes": "Imported '$I File Structure.tpl' covers this; verify against Win11 samples, then mark complete."
+      "notes": "Version 2 verified against Win11 26200 (67 samples + controlled deletion); imported template's v2 branch is correct, see templates entry. REMAINING: obtain a Vista/7 version 1 sample to settle whether the v1 name field is fixed 260 chars (544-byte file) or variable - sources disagree and the imported template reads 256."
     },
     {
       "structure": "Thumbcache _NN.db entry header",
