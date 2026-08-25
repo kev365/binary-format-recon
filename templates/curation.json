@@ -64,6 +64,18 @@
     "windows-artefacts/$I File Structure.tpl": {
       "status": "partial",
       "notes": "BOTH versions now established (2026-08-24). v2: every field proven by controlled deletion plus a 67-sample Win11 26200 corpus; chars@24 counts UTF-16 characters INCLUDING the terminator, total = 28 + 2*chars (67/67); the 'string16 <chars>' branch consumes exactly the right byte count. v1 DEFECT: verified against a Vista-era 544-byte sample (plaso test data) - the name field at +24 is a fixed 520 bytes (260 UTF-16 chars, MAX_PATH, NUL-padded), so 'string16 256' under-reads by 8 bytes and would truncate a maximum-length name. Should be 'string16 260'. Corrected copy belongs in own/. Note libyal/dtformats renders this field as variable-length, which the 544-byte sample contradicts."
+    },
+    "windows-artefacts/EVT_Header.tpl": {
+      "status": "complete",
+      "notes": "All 12 fields verified against a 2 MB Win-era SysEvent.Evt (plaso): covers the full 48-byte header, Length1==Length2==48, LfLe at +4, flag bits decode correctly. The template's own DIRTY caveat is REAL and demonstrated: with DIRTY set, header OfsNext/NumNext were stale by 25 records versus the cursor record, so an examiner trusting the header alone would miss 25 events - follow the template's instruction and locate the cursor instead. Dated naming only: +8/+12 are labelled unknown1/unknown2 but libyal documents them as major/minor format version (both 1), and flag bit 3 is labelled PRIMARY where libyal calls it Archive. Layout is correct; the template predates that documentation."
+    },
+    "windows-artefacts/EVT_Cursor.tpl": {
+      "status": "complete",
+      "notes": "Verified exactly. Located by searching its 16-byte magic as the template instructs (the header's OfsNext did not point at it - see the EVT_Header DIRTY note). All 7 fields correct: Length1==Length2==40 (0x28), signature 11111111/22222222/33333333/44444444, and OfsNext is self-referential. Its NumFirst..NumNext bracket exactly the 6063 records recoverable by walking the log."
+    },
+    "windows-artefacts/EVT_Event.tpl": {
+      "status": "partial",
+      "notes": "Field offsets verified across 6063 records: LfLe at +4 and size==size-copy on 6063/6063, record numbers contiguous 1392..7454 matching the cursor's count exactly, and time_t (unix32) timestamps 0 out of range. The EventId bit decomposition into Facility/Customer/Severity is added value beyond libyal. LIMITATION (inherent, like the NTFS fixup caveat): EVT is a true circular buffer and a record may SPLIT across the physical end of file, continuing at offset 48 - one record does so in this sample. The template language has no circular addressing, so applied at that offset the template misparses. RESIDUAL: scanning the dead region between cursor and first record yielded 257 further self-consistent records numbered 1135..1391, all below the live range - remnants of an earlier log generation, carveable and invisible to any header-driven parse."
     }
   },
   "wanted": [
