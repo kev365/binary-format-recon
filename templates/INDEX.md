@@ -8,7 +8,7 @@ documented; **partial** = works but known gaps (see notes);
 **draft** = generated from our own findings, still under test;
 **unreviewed** = imported, not yet assessed against a reference.
 
-117 templates.
+119 templates.
 
 ## imported/disk-images/
 
@@ -176,9 +176,9 @@ documented; **partial** = works but known gaps (see notes);
 |---|---|---|---|---|---|---|
 | $I File Structure.tpl | $I File Structure | file | — | Costas Katsavounidis (kacos2000) | unreviewed |  |
 | ETL_Header_x64.tpl | ETL Header (x64) | file | — | Costas Katsavounidis (kacos2000) | partial | Header only; trace buffers and events not covered. |
-| EVTX Chunk Header.tpl | EVTX Chunk Header | — | 0:456C6643686E6B00 | Costas Katsavounidis (kacos2000) | unreviewed |  |
-| EVTX File Header.tpl | EVTX File Header | — | 0:456C6646696C6500 | Costas Katsavounidis (kacos2000) | unreviewed |  |
-| EVTX Record Structure.tpl | EVTX Record Structure | — | 0:2A2A00 | Costas Katsavounidis (kacos2000) | partial | Record envelope only; BinXML payload is beyond the template language. Expansion candidate: token-level BinXML markers. |
+| EVTX Chunk Header.tpl | EVTX Chunk Header | — | 0:456C6643686E6B00 | Costas Katsavounidis (kacos2000) | partial | All 9 declared field offsets verified correct against 6 logs; both CRC-32 coverage claims confirmed (events CRC over 512..free-space-offset, chunk CRC over 0..120 plus 128..512). Incomplete: omits unknown 56..120, common string offset array 128..384, and template pointer array 384..512. Fuller version: own/EVTX Chunk Header.tpl. |
+| EVTX File Header.tpl | EVTX File Header | — | 0:456C6646696C6500 | Costas Katsavounidis (kacos2000) | partial | DEFECT (verified 2026-08-24, 6 logs): line 22 'move 3' should be 'move 2'. Reads Header block size at +41 (14864) and Number of chunks at +43 (0) instead of +40 (4096) and +42. Reports 0 chunks for a 65-chunk log. Other fields and the CRC-32 coverage note are correct. Corrected version: own/EVTX File Header.tpl. |
+| EVTX Record Structure.tpl | EVTX Record Structure | — | 0:2A2A00 | Costas Katsavounidis (kacos2000) | partial | Record envelope verified: signature/size/id/FILETIME offsets correct and size==size-copy on every record walked. BinXML payload is beyond the template language. Note the 'requires 0 2A2A00' guard is 3 bytes where the signature is 4 (2A 2A 00 00). Cites a blog post rather than libyal. |
 | EVT_Cursor.tpl | EVT Cursor | file | 0:2800000011111111222222223333333344444444 | Andreas Schuster | unreviewed |  |
 | EVT_Event.tpl | EVT Event | file | 4:4C664C65 | Andreas Schuster | unreviewed |  |
 | EVT_Header.tpl | EVT Header | file | 0:300000004C664C65 | Andreas Schuster | unreviewed |  |
@@ -186,6 +186,13 @@ documented; **partial** = works but known gaps (see notes);
 | LNK FILE Record.tpl | .LNK FILE Record | file | — | Steve Guty | partial | Per x-ways.net: structures at end of file remain partially undocumented; compare MS-SHLLINK before extending. |
 | Non-Unicode LNK FILE Record.tpl | .LNK FILE Record (non-Unicode) | file | — | Steve Guty | partial | Same end-of-file caveat as the Unicode variant. |
 | SHD spool shadow file.tpl | SHD spool shadow file | file | — | Costas Katsavounidis (kacos2000) | unreviewed |  |
+
+## own/
+
+| Template | Title | Applies to | Requires | Contributor | Status | Notes |
+|---|---|---|---|---|---|---|
+| EVTX Chunk Header.tpl | EVTX Chunk Header | file | 0x0:456C6643686E6B00 | — | draft | As above. Both CRC-32 claims verified empirically. The two 128..512 arrays are marked inferred - taken from libyal, not independently tested. Unknown +0x78 is 1 in every chunk sampled. |
+| EVTX File Header.tpl | EVTX File Header | file | 0x0:456C6646696C6500 | — | draft | Authored from libyal's spec plus our own byte-level verification (6 logs, 278 chunks, format 3.2). Covers all 4096 bytes with no gaps; CRC-32 over bytes 0..120 confirmed 6/6. Number of chunks @42 = chunks IN USE (matches ElfChnk signature count 6/6), NOT allocated capacity - 4 of 6 logs are allocated larger, and the trailing unwritten chunks are slack worth carving. Promote to complete after applying to logs from a different Windows build. |
 
 ## Known structures with no template yet
 

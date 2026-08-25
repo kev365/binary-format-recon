@@ -27,7 +27,7 @@
     },
     "windows-artefacts/EVTX Record Structure.tpl": {
       "status": "partial",
-      "notes": "Record envelope only; BinXML payload is beyond the template language. Expansion candidate: token-level BinXML markers."
+      "notes": "Record envelope verified: signature/size/id/FILETIME offsets correct and size==size-copy on every record walked. BinXML payload is beyond the template language. Note the 'requires 0 2A2A00' guard is 3 bytes where the signature is 4 (2A 2A 00 00). Cites a blog post rather than libyal."
     },
     "file-formats/SQLite Header.tpl": {
       "status": "partial",
@@ -44,6 +44,22 @@
     "file-formats/Dalet BWF file header.txt": {
       "status": "partial",
       "notes": "Ships as .txt; rename to .tpl for X-Ways to list it."
+    },
+    "windows-artefacts/EVTX File Header.tpl": {
+      "status": "partial",
+      "notes": "DEFECT (verified 2026-08-24, 6 logs): line 22 'move 3' should be 'move 2'. Reads Header block size at +41 (14864) and Number of chunks at +43 (0) instead of +40 (4096) and +42. Reports 0 chunks for a 65-chunk log. Other fields and the CRC-32 coverage note are correct. Corrected version: own/EVTX File Header.tpl."
+    },
+    "windows-artefacts/EVTX Chunk Header.tpl": {
+      "status": "partial",
+      "notes": "All 9 declared field offsets verified correct against 6 logs; both CRC-32 coverage claims confirmed (events CRC over 512..free-space-offset, chunk CRC over 0..120 plus 128..512). Incomplete: omits unknown 56..120, common string offset array 128..384, and template pointer array 384..512. Fuller version: own/EVTX Chunk Header.tpl."
+    },
+    "own/EVTX File Header.tpl": {
+      "status": "draft",
+      "notes": "Authored from libyal's spec plus our own byte-level verification (6 logs, 278 chunks, format 3.2). Covers all 4096 bytes with no gaps; CRC-32 over bytes 0..120 confirmed 6/6. Number of chunks @42 = chunks IN USE (matches ElfChnk signature count 6/6), NOT allocated capacity - 4 of 6 logs are allocated larger, and the trailing unwritten chunks are slack worth carving. Promote to complete after applying to logs from a different Windows build."
+    },
+    "own/EVTX Chunk Header.tpl": {
+      "status": "draft",
+      "notes": "As above. Both CRC-32 claims verified empirically. The two 128..512 arrays are marked inferred - taken from libyal, not independently tested. Unknown +0x78 is 1 in every chunk sampled."
     }
   },
   "wanted": [

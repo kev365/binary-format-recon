@@ -105,7 +105,10 @@ def emit_field(f):
     """One variable declaration, status carried as a comment."""
     tpl_type, fixed = TYPES[f["type"]]
     name = f["name"]
-    quoted = f'"{name}"' if " " in name else name
+    # quote anything that is not a bare identifier -- a name like CRC-32 or
+    # 2nd-copy would otherwise be re-parsed as an expression or a number
+    bare = re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", name)
+    quoted = name if bare else f'"{name}"'
     if tpl_type in ("string", "string16", "hex", "binary"):
         n = f["size"] // 2 if tpl_type == "string16" else f["size"]
         decl = f"    {tpl_type} {n} {quoted}"

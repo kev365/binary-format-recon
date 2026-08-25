@@ -45,9 +45,10 @@ templates (filesystems, partition tables, EVTX, LNK, virtual disks, and
 more) with per-template trust status, plus a list of documented structures
 that still lack one. The template files themselves are not redistributed
 (mixed third-party licensing) — if `templates/imported/` holds only
-`PROVENANCE.json`, populate it with `python templates/fetch_templates.py`. A hit there is a working, executable layout to verify
-against the corpus — and its `requires` line is the magic to feed
-`constant_hunt.py`. See `references/xways-templates.md`.
+`PROVENANCE.json`, populate it with `python templates/fetch_templates.py`.
+A hit there is a working, executable layout to verify against the corpus —
+and its `requires` line is the magic to feed `constant_hunt.py`. See
+`references/xways-templates.md`.
 
 If a spec or reference implementation exists, the job becomes *verification*
 rather than discovery — easier, but not trivial: specs are written from a
