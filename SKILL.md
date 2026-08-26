@@ -73,8 +73,21 @@ python scripts/review_tracker.py close src-1
 `close` refuses while units are unread or cross-references unresolved — it
 turns "did I finish that?" into queryable state rather than recall. Read
 `references/source-review.md` before any substantial source: traversal order,
-handling sources too large to read whole, and chasing citations without
-abandoning the review you are in.
+handling sources too large to read whole, chasing citations without
+abandoning the review you are in, and what to do when a retrieval misfires.
+
+**A source you could not retrieve is a source you have not read.** A fetch
+that returns an index page, a landing page, a 403, or a truncated render has
+retrieved nothing — recognise it as such and try harder, not fall back on
+what you remember the document saying. Memory of a spec is the input the
+whole method is designed to distrust: it is a plausible layout with no
+evidence attached, and a claim built on it can be wrong in exactly the ways
+this skill exists to catch. Find the section-level page, the PDF the index
+links to, the source repository behind the docs, a mirror, or a different
+authority that documents the same structure. Only when every route is
+exhausted does the source become `inaccessible` — recorded with the routes
+tried — and any conclusion that leaned on recall of it stays `speculative`
+until it is actually read.
 
 ## Three ways in
 
@@ -310,6 +323,12 @@ tested.
   draw a conclusion from a review that was never closed. Partial readings
   feel complete from the inside, which is why coverage is tracked rather
   than recalled.
+- **Never substitute memory for a source.** If the document did not come
+  back — wrong page, blocked, truncated, moved — then it has not been read,
+  and "I recall the spec says" is not a citation. Retrieve it by another
+  route, or mark it `inaccessible` and cap every dependent claim at
+  `speculative`. A well-studied format is no exception: familiarity is
+  precisely when unverified recall feels safest and is most costly.
 - **An unknown you have bounded beats a silent gap.** A field whose purpose
   is undetermined still belongs in the layout with its offset and width and a
   status of `unknown`. Omitting it makes the layout look complete when it is

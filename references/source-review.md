@@ -16,6 +16,7 @@ Contents:
 2. Enumerate before reading
 3. Plan the traversal
 4. Read a unit properly
+4a. When retrieval misfires
 5. Cross-references without drift
 6. Completion, and what counts as done
 7. Reviewing a corpus of samples
@@ -156,6 +157,56 @@ Marking a unit done is a claim that you could answer questions about it
 without rereading. If that is not true, it is not done.
 
 ---
+
+## 4a. When retrieval misfires
+
+Before a unit can be read it has to arrive, and the failure that precedes
+skimming is quieter than skimming: the fetch returns *something*, so it feels
+like the source was consulted. It was not. Treat each of these as a retrieval
+of nothing:
+
+| Symptom | What actually came back |
+|---|---|
+| Table of contents, revision history, download links | the document's index page, not the document |
+| Product landing page, "Overview", marketing copy | the site, not the spec |
+| HTTP 403 / 401 / 404, a login wall, a CAPTCHA | nothing |
+| Text that stops mid-table, or a summary shorter than the section should be | a truncated render; the field table is missing |
+| A cross-host redirect you did not follow | nothing |
+| The right document, wrong version (a 2013 revision when the field was added in 2018) | a different source |
+
+The rule is blunt because the temptation is strong: **a source that did not
+arrive has not been read, and what you remember of it is not a substitute.**
+Recall of a specification is a hypothesis with no evidence attached — exactly
+the kind of plausible layout the rest of this method is built to distrust. It
+is most dangerous for well-known formats, where confidence is highest and a
+wrong field label (swapped timestamps, an off-by-one in a reserved run)
+survives longest because nobody thinks to check.
+
+Escalate in this order, and record each attempt:
+
+1. **The same source, addressed properly.** Index pages link to the real
+   thing: a PDF download, per-section pages, a "source" link to the docs
+   repository. Microsoft Open Specifications are the canonical case — the
+   top-level `[MS-XXXX]` page is an index with a PDF link and a GitHub
+   source path; the structure tables live in the section pages beneath it
+   or in the PDF. Fetch the section, or download the PDF and extract the
+   pages you need.
+2. **A mirror of the same text.** Docs repositories on GitHub (raw
+   markdown), the Internet Archive, a vendor's older documentation host.
+3. **A different authority on the same structure.** libyal's asciidoc for
+   the format, a reference parser's source (`liblnk`, `libevtx`, plaso's
+   dtfabric definitions), the producing binary's headers if published.
+   Two independent sources that agree are stronger than one anyway.
+4. **The bytes.** A controlled sample with known values settles a field
+   order regardless of what any document says — but it settles it for one
+   producer on one build, so it complements the document rather than
+   replacing it.
+
+Only when those are exhausted does the unit become `inaccessible`, and the
+tracker entry should list the routes tried so the next reader does not
+repeat them. Any claim that was going to rest on that source is capped at
+`speculative` until it is read; if you already wrote a stronger status on
+the strength of memory, downgrade it now and say why in the note.
 
 ## 5. Cross-references without drift
 

@@ -12,3 +12,6 @@ __pycache__/
 # Local-only: session memory and project instructions for Claude
 .remember/
 CLAUDE.md
+
+# review_tracker.py working state (per-analysis, not part of the skill)
+.review-state.json

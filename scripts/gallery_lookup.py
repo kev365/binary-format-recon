@@ -167,9 +167,14 @@ def gallery_targets(domain, terms, sample="sample.bin"):
                     "Deepest forensic-artefact documentation. Check dtformats, "
                     "winreg-kb, esedb-kb, and the per-format lib*."))
         out.append((2, "Microsoft Open Specifications", "prose",
-                    f"https://www.google.com/search?q={q('site:learn.microsoft.com/openspecs ' + (t or ''))}",
+                    "https://learn.microsoft.com/en-us/openspecs/windows_protocols/",
                     "Authoritative for Windows and Office structures "
-                    "(MS-CFB, MS-SHLLINK, MS-PST, MS-XCA)."))
+                    "(MS-CFB, MS-SHLLINK, MS-PST, MS-XCA). The [MS-XXXX] "
+                    "top page is only an INDEX (revision table, PDF link, "
+                    "GitHub source path) -- the structure tables are in the "
+                    "section pages beneath it or in the PDF. Fetch the "
+                    "section or download the PDF; an index page retrieved "
+                    "is a spec not read."))
         out.append((3, "Forensics Wiki", "prose",
                     f"https://forensics.wiki/?s={q(t)}" if t
                     else "https://forensics.wiki/",
