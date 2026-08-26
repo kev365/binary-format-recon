@@ -104,6 +104,30 @@
     "own/Shell Item - Envelope.tpl": {
       "status": "complete",
       "notes": "libyal libfwsi Windows Shell Item format v0.0.40, read to a declared scope and closed (9 units read, 9 classified out-of-scope). Community reverse engineering, not vendor documentation. Type dispatcher: size, class type nibble and flags, bounded payload, terminal-item guard. Exercised on all 16 items above."
+    },
+    "own/Compound File Header.tpl": {
+      "status": "complete",
+      "notes": "Authored from MS-CFB v20200701 read for sections 2.1-2.6.3 (closed; 2.6.4-2.9 out of scope). Verified on 2 automaticDestinations-ms containers (plaso): signature, major 3 / minor 0x3E, byte order FFFE, sector shift 9, mini shift 6, cutoff 0x1000, first DIFAT FFFFFFFE, and file size = 512 + N*512 in both. The 109-entry DIFAT array is decoded; DIFAT sectors beyond it (files over 6.875 MB) are not needed for jump lists. Version 4 (4096-byte sector) files were not seen."
+    },
+    "own/Compound File Directory Entry.tpl": {
+      "status": "complete",
+      "notes": "Authored from MS-CFB v20200701 read for sections 2.1-2.6.3 (closed; 2.6.4-2.9 out of scope). Verified by reading both containers' directories with the same field offsets (name length @64, type @66, start @116, size @120): root entry plus DestList and 3-11 numbered streams per file, every numbered stream beginning with a shell link header. Object types 2 and 5 seen; storages (type 1), red-black sibling traversal and CLSID/state/timestamps on storages were not exercised."
+    },
+    "own/Jump List DestList Header.tpl": {
+      "status": "complete",
+      "notes": "Authored from libyal dtformats 'Jump lists format' read in full for the automatic and custom destinations sections (closed). Community reverse engineering; Microsoft has not published the DestList or custom destinations structures. Verified on a version 1 (Win7) and a version 3 (Win10) DestList: entry count matched the number of entries tiled (11 and 2), 'last entry number' equalled the highest entry number present, and the unknown at +12 decoded as a plausible float in both (22.4, 2.0), consistent with libyal's note. Version 4 not seen."
+    },
+    "own/Jump List DestList Entry v1.tpl": {
+      "status": "complete",
+      "notes": "Authored from libyal dtformats 'Jump lists format' read in full for the automatic and custom destinations sections (closed). Community reverse engineering; Microsoft has not published the DestList or custom destinations structures. Verified on 11 entries from a Windows 7 DestList: the entries tiled the 2216-byte stream exactly at 114 + 2*chars each, hostname and FILETIME decoded sensibly, pin status -1 throughout, entry numbers 1-11 matched the container's stream names 1-b, and paths included both file paths and ::{CLSID} namespace items. Pinned entries (status >= 0) not seen."
+    },
+    "own/Jump List DestList Entry v3.tpl": {
+      "status": "complete",
+      "notes": "Authored from libyal dtformats 'Jump lists format' read in full for the automatic and custom destinations sections (closed). Community reverse engineering; Microsoft has not published the DestList or custom destinations structures. Verified on 2 entries from a Windows 10 DestList: tiled the 584-byte stream exactly at 134 + 2*chars each, including the 4-byte trailer libyal marks as padding (zero in both). Hostname was empty for these URL entries; unknown@112 was FFFFFFFF and unknown@116 was 1 in both, matching libyal's 'status?' and 'access count?' guesses without confirming them. Only 2 entries and one producer build - promote the unknowns' names only with a larger corpus."
+    },
+    "own/Jump List Custom Destinations.tpl": {
+      "status": "complete",
+      "notes": "Authored from libyal dtformats 'Jump lists format' read in full for the automatic and custom destinations sections (closed). Community reverse engineering; Microsoft has not published the DestList or custom destinations structures. Verified on 3 customDestinations-ms files: header version 2; category types 0, 1 and 2 all seen; every category footer BABFFBAB landed where predicted; 12 embedded shell links across the two non-empty files sized with the Shell Link template's walk consumed both files exactly (1775/1775, 17261/17261). The template decodes the header and first category only, because a shell link has no length field the template language can use to skip to the next category."
     }
   },
   "wanted": [
